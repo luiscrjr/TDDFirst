@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Projeto.Services.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Projeto.Services
@@ -25,6 +28,13 @@ namespace Projeto.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //injeção de dependência para a classe ProdutoRepository.cs
+            services.AddSingleton<ProdutoRepository>
+                (map => new ProdutoRepository(new ConcurrentDictionary<Guid, Produto>()));
+
+            //configurando oa automapper
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddSwaggerGen(
                 swagger =>
                 {

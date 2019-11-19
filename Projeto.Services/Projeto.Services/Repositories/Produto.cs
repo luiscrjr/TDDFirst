@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Projeto.Services.Models
+namespace Projeto.Services.Repositories
 {
-    public class ProdutoConsultaModel
+    public class Produto
     {
-        public string Id { get; set; }
-
+        public Guid Id { get; set; }
         public string Nome { get; set; }
-
-        public decimal Preco { get; set; }
-
+        public decimal Preco{ get; set; }
         public int Quantidade { get; set; }
     }
 }

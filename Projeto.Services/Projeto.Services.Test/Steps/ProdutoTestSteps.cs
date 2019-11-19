@@ -1,8 +1,12 @@
 ﻿using FluentAssertions;
+using Newtonsoft.Json;
+using Projeto.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -23,8 +27,18 @@ namespace Projeto.Services.Test.Steps
         [Fact] // Método de teste do XUnit
         public async Task Produto_Post_ReturnsOkResponse()
         {
+            var model = new ProdutoCadastroModel
+            {
+                Nome = "Notebook",
+                Preco = 2500,
+                Quantidade = 10
+            };
+
+            var request = new StringContent(JsonConvert.SerializeObject(model),
+                Encoding.UTF8, "application/json");
+
             //testando uma requisoção POST para a API
-            var response = await appContext.client.PostAsync(resourse, null);
+            var response = await appContext.client.PostAsync(resourse, request);
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 

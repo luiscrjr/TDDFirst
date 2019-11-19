@@ -9,7 +9,7 @@ namespace Projeto.Services.Models
     public class ProdutoEdicaoModel
     {
         [Required]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         public string Nome { get; set; }
