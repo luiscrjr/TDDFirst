@@ -21,9 +21,11 @@ namespace Projeto.Services.Controllers
             if (model == null || !ModelState.IsValid)
                 return BadRequest();
 
-            repository.Add(mapper.Map<Produto>(model));
+            var produto = mapper.Map<Produto>(model);
 
-            return Ok();
+            repository.Add(produto);
+
+            return Ok(produto);
         }
 
         [HttpPut]
@@ -33,9 +35,10 @@ namespace Projeto.Services.Controllers
             if (model == null || !ModelState.IsValid)
                 return BadRequest();
 
-            repository.Modify(mapper.Map<Produto>(model));
+            var produto = mapper.Map<Produto>(model);
+            repository.Modify(produto);
 
-            return Ok();
+            return Ok(produto);
         }
 
         [HttpDelete("{id}")]

@@ -5323,6 +5323,18 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
+      "Xunit.Priority/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "2.3.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Xunit.Priority.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xunit.Priority.dll": {}
+        }
+      },
       "xunit.runner.visualstudio/2.4.1": {
         "type": "package",
         "dependencies": {
@@ -5340,7 +5352,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
-          "Swashbuckle.AspNetCore": "4.0.1"
+          "Swashbuckle.AspNetCore": "4.0.1",
+          "Xunit.Priority": "1.1.6"
         },
         "compile": {
           "bin/placeholder/Projeto.Services.dll": {}
@@ -13901,6 +13914,22 @@
         "lib/netstandard1.1/xunit.execution.dotnet.xml",
         "xunit.extensibility.execution.2.4.1.nupkg.sha512",
         "xunit.extensibility.execution.nuspec"
+      ]
+    },
+    "Xunit.Priority/1.1.6": {
+      "sha512": "BnVwaBl//QGkbI8ofTzvzuVfb32NDgTmQRBzfRHQSf0QcF5ud+jmaYvBMQ/dA6bNmnkaWCmot/UqpLu27alZbQ==",
+      "type": "package",
+      "path": "xunit.priority/1.1.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net452/Xunit.Priority.dll",
+        "lib/net452/Xunit.Priority.xml",
+        "lib/netstandard1.1/Xunit.Priority.dll",
+        "lib/netstandard1.1/Xunit.Priority.xml",
+        "lib/netstandard2.0/Xunit.Priority.dll",
+        "lib/netstandard2.0/Xunit.Priority.xml",
+        "xunit.priority.1.1.6.nupkg.sha512",
+        "xunit.priority.nuspec"
       ]
     },
     "xunit.runner.visualstudio/2.4.1": {
